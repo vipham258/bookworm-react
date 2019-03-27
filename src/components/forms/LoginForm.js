@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
     const { data, errors } = this.state
     return (
       <Form onSubmit={this.onSubmit}>
-        <Form.Field>
+        <Form.Field error={!!errors.email}>
           <Label htmlForm="email">Email</Label>
           <input
             type="email"
@@ -44,9 +44,9 @@ class LoginForm extends React.Component {
             value={data.email}
             onChange={this.onChange}
           />
-          {errors.email && <InlineError text={errors.email} />}; ) }
+          {errors.email && <InlineError text={errors.email} />}
         </Form.Field>
-        <Form.Field>
+        <Form.Field error={!!errors.password}>
           <Label htmlForm="Password">Password</Label>
           <input
             type="password"
@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
             value={data.password}
             onChange={this.onChange}
           />
-          {errors.password && <InlineError text={errors.password} />};
+          {errors.password && <InlineError text={errors.password} />}
         </Form.Field>
         <Button primary>Login</Button>
       </Form>
