@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import LoginForm from '../forms/LoginForm'
-class LoginPage extends Component {
+class LoginPage extends React.Component {
+  submit = data => {
+    console.log(data)
+  }
   render() {
     return (
       <div>
         <h1>Login Page</h1>
-        <LoginForm />
+        <LoginForm submit={this.submit} />
       </div>
     )
   }
